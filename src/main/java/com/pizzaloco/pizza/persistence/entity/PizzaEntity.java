@@ -35,4 +35,6 @@ public class PizzaEntity {
     @Column(columnDefinition = "TINYINT", nullable = false)
     private Boolean available;
 
+    //no es necesario al parecer poner la relacion de pizza con order item, el orden de la pizza no es relevante
+
 }

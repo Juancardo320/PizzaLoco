@@ -30,4 +30,6 @@ public class CustomerEntity {
 
     @Column(name = "phone_number", length = 20)
     private String phoneNumber;
+
+    //no se agrega la relacion con order entity ya que no es relevante ver las ordenes de un customer en especifico
 }
