@@ -1,5 +1,6 @@
 package com.pizzaloco.pizza.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -35,10 +36,11 @@ public class OrderEntity {
     @Column(name = "additional_notes", length = 200)
     private String additionalNotes;
 
-    @OneToMany(mappedBy = "order")
-    private List<OrderItemEntity> items;
-
-    @OneToOne
+    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_customer", referencedColumnName = "id_customer", insertable = false, updatable = false)
-    private CustomerEntity customer;
+    @JsonIgnore
+    private CustomerEntity customer;    
+
+    @OneToMany(mappedBy = "order", fetch = FetchType.EAGER)
+    private List<OrderItemEntity> items;
 }
