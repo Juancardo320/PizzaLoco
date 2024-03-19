@@ -1,6 +1,7 @@
 package com.pizzaloco.pizza.service;
 
 import com.pizzaloco.pizza.persistence.entity.OrderEntity;
+import com.pizzaloco.pizza.persistence.projection.OrderSummary;
 import com.pizzaloco.pizza.persistence.repository.OrderRepository;
 import org.hibernate.query.Order;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,5 +42,9 @@ public class OrderService {
 
     public List<OrderEntity> getCustomerOrders(String idCustomer){
         return this.orderRepository.findCustomerOrder(idCustomer);
+    }
+
+    public OrderSummary findSummary(int orderId){
+        return this.orderRepository.findSummary(orderId);
     }
 }
