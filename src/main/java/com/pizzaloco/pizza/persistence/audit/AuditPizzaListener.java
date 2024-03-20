@@ -24,7 +24,7 @@ public class AuditPizzaListener {
     public void onPostPersist(PizzaEntity entity){
         System.out.println("POST PERSIST OR UPDATE");
         System.out.println("OLD VALUE: " + this.currentValue.toString());
-        System.out.println("NEW VALUE: " +cd  entity.toString());
+        System.out.println("NEW VALUE: " + entity.toString());
     }
 
     @PreRemove
