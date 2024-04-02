@@ -41,7 +41,7 @@ public class SecurityConfig {
                              .requestMatchers("/api/orders/**").hasRole("ADMIN")
                              .anyRequest()
                              .authenticated();
-                    }
+                    } 
                 )
                 .csrf(AbstractHttpConfigurer::disable)
                 .cors(Customizer.withDefaults())
